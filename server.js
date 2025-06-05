@@ -22,6 +22,12 @@ mongoose.connect(process.env.MONGO_URI, {
 // Routes
 app.use('/api', authRoutes);
 
+// Add this near your other route imports
+const patientRoutes = require('./routes/patientRoutes');
+
+// Add this with your other middleware
+app.use('/api/patients', patientRoutes);
+
 // Start server
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {

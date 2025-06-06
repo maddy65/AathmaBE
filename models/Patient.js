@@ -40,4 +40,6 @@ const patientSchema = new mongoose.Schema({
   }
 }, { timestamps: true });
 
+patientSchema.index({ doctorId: 1, nextAppointment: 1 });
+
 module.exports = mongoose.model('Patient', patientSchema);

@@ -28,6 +28,9 @@ const patientRoutes = require('./routes/patientRoutes');
 // Add this with your other middleware
 app.use('/api/patients', patientRoutes);
 
+const statsRoutes = require('./routes/statsRoutes');
+app.use('/api', statsRoutes);
+
 // Start server
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
